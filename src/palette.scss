@@ -1,3 +1,5 @@
+@import url("https://fonts.google.com/specimen/Josefin+Sans");
+
 // primary colors
 $bright-blue: hsl(220, 98%, 61%);
 $check-background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
@@ -17,3 +19,8 @@ $light-grayish-blue-hover: hsl(236, 33%, 92%);
 $dark-grayish-blue: hsl(234, 11%, 52%);
 $very-dark-grayish-blue-one: hsl(233, 14%, 35%);
 $very-dark-grayish-blue-two: hsl(237, 14%, 26%);
+
+// fonts
+$JosefinSans: "Josefin Sans", "sans-serif";
+$font-weight-normal: 400;
+$font-weight-bold: 700;
