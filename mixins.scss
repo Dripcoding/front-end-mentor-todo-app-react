@@ -16,13 +16,16 @@
 	text-align: $textAlign;
 }
 
-@mixin screen($size, $pixels: $breakpoint-small) {
-	@if $size == "small" {
-		@media screen and (max-width: $breakpoint-small) {
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 1440px;
+
+@mixin screen($size, $pixels: $breakpoint-mobile) {
+	@if $size == "mobile" {
+		@media screen and (max-width: $breakpoint-mobile) {
 			@content;
 		}
-	} @else if $size == "med" {
-		@media screen and (max-width: $breakpoint-med) {
+	} @else if $size == "desktop" {
+		@media screen and (max-width: $breakpoint-desktop) {
 			@content;
 		}
 	}
