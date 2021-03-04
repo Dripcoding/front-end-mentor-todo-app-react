@@ -1,5 +1,37 @@
+@import "./mixins.scss";
+
+$background-desktop-dark: url("./assets/images/bg-desktop-dark.jpg");
+$background-mobile-dark: url("./assets/images/bg-mobile-dark.jpg");
+$background-desktop-light: url("./assets/images/bg-desktop-light.jpg");
+$background-mobile-light: url("./assets/images/bg-mobile-light.jpg");
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	@include flex(column, center, center);
+	min-height: 100%;
+}
+
+.background-desktop-dark {
+	background-image: $background-desktop-dark;
+}
+
+.background-mobile-dark {
+	background-image: $background-mobile-dark;
+}
+
+.background-desktop-light {
+	background-image: $background-desktop-light;
+}
+
+.background-mobile-light {
+	background-image: $background-mobile-light;
 }
