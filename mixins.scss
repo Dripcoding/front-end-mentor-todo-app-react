@@ -15,3 +15,15 @@
 	line-height: $lineHeight;
 	text-align: $textAlign;
 }
+
+@mixin screen($size, $pixels: $breakpoint-small) {
+	@if $size == "small" {
+		@media screen and (max-width: $breakpoint-small) {
+			@content;
+		}
+	} @else if $size == "med" {
+		@media screen and (max-width: $breakpoint-med) {
+			@content;
+		}
+	}
+}
