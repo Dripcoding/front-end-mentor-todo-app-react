@@ -2,12 +2,8 @@
 
 exports[`App matches snapshot 1`] = `
 <div>
-  <div
-    class="App"
-  >
-    <header
-      class="App-header"
-    />
-  </div>
+  <main
+    class="appContainer background-desktop-dark"
+  />
 </div>
 `;
