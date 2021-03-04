@@ -16,11 +16,6 @@
 	text-align: $textAlign;
 }
 
-@mixin background-image($url) {
-	background-image: url($url);
-	background-repeat: no-repeat;
-}
-
 $breakpoint-mobile: 375px;
 $breakpoint-desktop: 1440px;
 
