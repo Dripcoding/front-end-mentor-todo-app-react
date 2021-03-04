@@ -1,0 +1,32 @@
+@mixin flex($direction, $justifyContent, $align-items) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justifyContent;
+	align-items: $align-items;
+}
+
+@mixin text($color, $size, $style, $weight, $spacing, $lineHeight, $textAlign) {
+	color: $color;
+	font-family: $Spartan;
+	font-size: $size;
+	font-style: $style;
+	font-weight: $weight;
+	letter-spacing: $spacing;
+	line-height: $lineHeight;
+	text-align: $textAlign;
+}
+
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 1440px;
+
+@mixin screen($size, $pixels: $breakpoint-mobile) {
+	@if $size == "mobile" {
+		@media screen and (max-width: $breakpoint-mobile) {
+			@content;
+		}
+	} @else if $size == "desktop" {
+		@media screen and (max-width: $breakpoint-desktop) {
+			@content;
+		}
+	}
+}
