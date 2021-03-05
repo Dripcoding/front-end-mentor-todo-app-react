@@ -3,7 +3,18 @@
 exports[`App matches snapshot 1`] = `
 <div>
   <main
-    class="appContainer background-desktop-dark"
-  />
+    class="appContainer__mainContainer background-desktop-dark"
+  >
+    <div
+      class="appContainer__titleContainer"
+    >
+      <h1>
+        Todo
+      </h1>
+      <svg>
+        icon-sun.svg
+      </svg>
+    </div>
+  </main>
 </div>
 `;
