@@ -10,7 +10,7 @@ const App = (): JSX.Element => {
     <main className={`${STYLE_BASE}mainContainer background-desktop-dark`}>
         <div className={`${STYLE_BASE}titleContainer`}>
             <h1>Todo</h1>
-            <SunToggleImg />
+            <SunToggleImg data-testid="SUN-TOGGLE-ICON"/>
         </div>
     </main>
   );
