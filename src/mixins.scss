@@ -1,3 +1,7 @@
+@import url("https://fonts.google.com/specimen/Josefin+Sans");
+
+$JoseFinSans: "Josefin Sans", sans-serif;
+
 @mixin flex($direction, $justifyContent, $align-items) {
 	display: flex;
 	flex-direction: $direction;
@@ -5,15 +9,25 @@
 	align-items: $align-items;
 }
 
-@mixin text($color, $size, $style, $weight, $spacing, $lineHeight, $textAlign) {
+@mixin text(
+	$color,
+	$size,
+	$style,
+	$weight,
+	$spacing,
+	$lineHeight,
+	$textAlign,
+	$textTransform
+) {
 	color: $color;
-	font-family: $Spartan;
+	font-family: $JoseFinSans;
 	font-size: $size;
 	font-style: $style;
 	font-weight: $weight;
 	letter-spacing: $spacing;
 	line-height: $lineHeight;
 	text-align: $textAlign;
+	text-transform: $textTransform;
 }
 
 $breakpoint-mobile: 375px;
