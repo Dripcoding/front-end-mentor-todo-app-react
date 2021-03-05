@@ -7,15 +7,27 @@ $background-desktop-light: url("../../assets/images/bg-desktop-light.jpg");
 $background-mobile-light: url("../../assets/images/bg-mobile-light.jpg");
 
 .appContainer__mainContainer {
-	@include flex(column, center, center);
+	@include flex(column, flex-start, center);
 	width: 100%;
 	height: 100vh;
+	padding-top: 70px;
 }
 
 .appContainer__titleContainer {
 	@include flex(row, space-between, flex-start);
 	width: 540px;
 	height: 64px;
+}
+
+h1 {
+	@include text(white, 40px, normal, 700, 15px, 40px, left, capitalize);
+	width: 167px;
+	height: 40px;
+}
+
+svg {
+	align-self: center;
+	margin-top: 10px;
 }
 
 .background-desktop-dark {
