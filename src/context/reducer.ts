@@ -15,7 +15,15 @@ export const reducer = (state: ITodos, action: IAction) => {
     switch(action.type) {
         case CREATE_TODO:
             return { todos: [...state.todos, action.payload] }     
-        // case EDIT_TODO:
+        case EDIT_TODO:
+            const updatedTodo = action.payload;
+            const todos = state.todos.map((todo, idx) => {
+                if (todo.id === updatedTodo.id) {
+                    todo.text = updatedTodo.text;
+                }
+                return todo;
+            })
+            return { todos }
         // case DELETE_TODO:
 
         default:
