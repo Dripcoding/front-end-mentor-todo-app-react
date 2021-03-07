@@ -1,4 +1,4 @@
-import { reducer, CREATE_TODO } from '../context/reducer'
+import { reducer, CREATE_TODO, EDIT_TODO } from '../context/reducer'
 
 describe("todo reducer" , () => {
 
@@ -12,5 +12,17 @@ describe("todo reducer" , () => {
        
         expect(result.todos).not.toBeNull();
         expect(result.todos).toEqual(expectedTodos)
+    })
+
+    it("edits todo", () => {
+        const action = { type: EDIT_TODO, payload: {id: 2, text: "new todo text"}}
+        const state = {
+            todos: [{id: 1, text: "first todo"}, {id: 2, text: "second todo"}]
+        }
+        const result = reducer(state, action);
+        const expectedTodos = state.todos
+
+        expect(result.todos).not.toBeNull();
+        expect(result.todos).toEqual(expectedTodos);
     })
 })
