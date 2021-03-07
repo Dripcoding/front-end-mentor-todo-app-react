@@ -64,6 +64,13 @@ export const todoReducer = (state: ITodos, action: IAction): ITodos => {
             const todos = state.todos.filter(todo => {
                 return todo.active === false
             })
+            return { todos }
+        }
+        case VIEW_ALL_ACTIVE_TODOS: {
+            const todos = state.todos.filter(todo => {
+                return todo.active === true
+            })
+            return { todos }
         }
         case VIEW_ALL_TODOS:
         default:
