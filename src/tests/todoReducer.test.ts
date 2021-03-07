@@ -1,4 +1,4 @@
-import { reducer, CREATE_TODO, EDIT_TODO, DELETE_TODO } from '../context/reducer'
+import { todoReducer, CREATE_TODO, EDIT_TODO, DELETE_TODO } from '../context/reducer'
 
 describe("todo reducer" , () => {
 
@@ -7,7 +7,7 @@ describe("todo reducer" , () => {
         const state = {
             todos: [{ id: 1, text: "first todo", active: true }]
         }
-        const result = reducer(state, action);
+        const result = todoReducer(state, action);
         const expectedTodos = [...state.todos, action.payload];
        
         expect(result.todos).not.toBeNull();
@@ -19,7 +19,7 @@ describe("todo reducer" , () => {
         const state = {
             todos: [{ id: 1, text: "first todo", active: true }, { id: 2, text: "second todo", active: true }]
         }
-        const result = reducer(state, action);
+        const result = todoReducer(state, action);
         const expectedTodos = state.todos
 
         expect(result.todos).not.toBeNull();
@@ -31,7 +31,7 @@ describe("todo reducer" , () => {
         const state = {
             todos: [{ id: 1, text: "first todo", active: true }, { id: 2, text: "second todo", active: true }]
         }
-        const result = reducer(state, action);
+        const result = todoReducer(state, action);
         const expectedTodos = [state.todos[1]];
 
         expect(result.todos).not.toBeNull();
@@ -44,7 +44,7 @@ describe("todo reducer" , () => {
         const state = {
             todos: [{ id: 1, text: "first todo", active: true }, { id: 2, text: "second todo", active: true }]
         }
-        const result = reducer(state, action);
+        const result = todoReducer(state, action);
 
         expect(result.todos).not.toBeNull();
         expect(result.todos).toEqual(state.todos)

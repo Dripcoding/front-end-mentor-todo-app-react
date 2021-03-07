@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { reducer } from './reducer';
+import { todoReducer } from './reducer';
 
 interface ITodoContextProps {
     children: React.ReactChild
@@ -22,7 +22,7 @@ const initialState: ITodos = {
 const TodoContext: React.Context<ITodos> = React.createContext(initialState);
 
 const TodoContextProvider = ({children}: ITodoContextProps): JSX.Element => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(todoReducer, initialState);
 
     return (
         <TodoContext.Provider value={initialState}>
