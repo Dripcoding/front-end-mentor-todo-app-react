@@ -16,8 +16,7 @@ interface IAction {
     payload: ITodo 
 }
 
-// todo reducer
-export const reducer = (state: ITodos, action: IAction) => {
+export const reducer = (state: ITodos, action: IAction): ITodos => {
     switch(action.type) {
         case CREATE_TODO: {
             return { todos: [...state.todos, action.payload] }     

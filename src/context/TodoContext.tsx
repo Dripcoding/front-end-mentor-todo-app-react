@@ -19,7 +19,7 @@ const initialState: ITodos = {
     todos: [{id: 1, text: "finish homework", active: true}]
 }
 
-const TodoContext = React.createContext(initialState);
+const TodoContext: React.Context<ITodos> = React.createContext(initialState);
 
 const TodoContextProvider = ({children}: ITodoContextProps): JSX.Element => {
     const [state, dispatch] = useReducer(reducer, initialState);
