@@ -57,6 +57,9 @@ export const todoReducer = (state: ITodos, action: IAction): ITodos => {
             })
             return { todos }
         }
+        case DELETE_ALL_TODOS: {
+            return { todos: [] }
+        }
         default:
             return state;
     }
