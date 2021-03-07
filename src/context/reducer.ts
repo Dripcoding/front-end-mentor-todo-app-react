@@ -48,6 +48,15 @@ export const todoReducer = (state: ITodos, action: IAction): ITodos => {
             })
             return { todos }
         }
+        case ACTIVATE_TODO: {
+            const todos = state.todos.map(todo => {
+                if (todo.id === action.payload.id) {
+                    todo.active = true
+                }
+                return todo
+            })
+            return { todos }
+        }
         default:
             return state;
     }
