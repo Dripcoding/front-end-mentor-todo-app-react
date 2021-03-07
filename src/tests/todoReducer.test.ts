@@ -27,7 +27,7 @@ describe("todo reducer" , () => {
         expect(result.todos).toEqual(expectedTodos);
     })
 
-    it("delete todo", () => {
+    it("deletes todo", () => {
         const action = { type: DELETE_TODO, payload: { id: 1, text: "todo to delete" }}
         const state = {
             todos: [{ id: 1, text: "first todo" }, { id: 2, text: "second todo" }]
@@ -37,5 +37,17 @@ describe("todo reducer" , () => {
 
         expect(result.todos).not.toBeNull();
         expect(result.todos).toEqual(expectedTodos)
+    })
+
+    it("returns given state as the default behavior", () => {
+        const DEFAULT_ACTION = "default"
+        const action = { type: DEFAULT_ACTION, payload: { id: 1, text: "default" }}
+        const state = {
+            todos: [{ id: 1, text: "first todo" }, { id: 2, text: "second todo" }]
+        }
+        const result = reducer(state, action);
+
+        expect(result.todos).not.toBeNull();
+        expect(result.todos).toEqual(state.todos)
     })
 })
