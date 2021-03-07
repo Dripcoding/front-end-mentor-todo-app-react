@@ -8,6 +8,7 @@ interface ITodoContextProps {
 export interface ITodo {
     id: number;
     text: string;
+    active: boolean;
 }
 
 export interface ITodos {
@@ -15,7 +16,7 @@ export interface ITodos {
 }
 
 const initialState: ITodos = {
-    todos: [{id: 1, text: "hello"}]
+    todos: [{id: 1, text: "finish homework", active: true}]
 }
 
 const TodoContext = React.createContext(initialState);

@@ -1,12 +1,11 @@
-import { notEqual } from 'node:assert'
 import { reducer, CREATE_TODO, EDIT_TODO, DELETE_TODO } from '../context/reducer'
 
 describe("todo reducer" , () => {
 
     it("creates todo", () => {
-        const action = { type: CREATE_TODO, payload: { id: 2, text: "second todo"}}
+        const action = { type: CREATE_TODO, payload: { id: 2, text: "second todo", active: true}}
         const state = {
-            todos: [{ id: 1, text: "first todo" }]
+            todos: [{ id: 1, text: "first todo", active: true }]
         }
         const result = reducer(state, action);
         const expectedTodos = [...state.todos, action.payload];
@@ -16,9 +15,9 @@ describe("todo reducer" , () => {
     })
 
     it("edits todo", () => {
-        const action = { type: EDIT_TODO, payload: {id: 2, text: "new todo text"}}
+        const action = { type: EDIT_TODO, payload: {id: 2, text: "new todo text", active: true}}
         const state = {
-            todos: [{ id: 1, text: "first todo" }, { id: 2, text: "second todo" }]
+            todos: [{ id: 1, text: "first todo", active: true }, { id: 2, text: "second todo", active: true }]
         }
         const result = reducer(state, action);
         const expectedTodos = state.todos
@@ -28,9 +27,9 @@ describe("todo reducer" , () => {
     })
 
     it("deletes todo", () => {
-        const action = { type: DELETE_TODO, payload: { id: 1, text: "todo to delete" }}
+        const action = { type: DELETE_TODO, payload: { id: 1, text: "todo to delete", active: true }}
         const state = {
-            todos: [{ id: 1, text: "first todo" }, { id: 2, text: "second todo" }]
+            todos: [{ id: 1, text: "first todo", active: true }, { id: 2, text: "second todo", active: true }]
         }
         const result = reducer(state, action);
         const expectedTodos = [state.todos[1]];
@@ -41,9 +40,9 @@ describe("todo reducer" , () => {
 
     it("returns given state as the default behavior", () => {
         const DEFAULT_ACTION = "default"
-        const action = { type: DEFAULT_ACTION, payload: { id: 1, text: "default" }}
+        const action = { type: DEFAULT_ACTION, payload: { id: 1, text: "default", active: true }}
         const state = {
-            todos: [{ id: 1, text: "first todo" }, { id: 2, text: "second todo" }]
+            todos: [{ id: 1, text: "first todo", active: true }, { id: 2, text: "second todo", active: true }]
         }
         const result = reducer(state, action);
 
