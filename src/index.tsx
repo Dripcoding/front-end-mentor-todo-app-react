@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import TodoContextProvider from './context/TodoContext'
 import App from './containers/App/App';
 import reportWebVitals from './reportWebVitals';
 
+import './index.scss';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <TodoContextProvider>
+         <App />
+      </TodoContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
