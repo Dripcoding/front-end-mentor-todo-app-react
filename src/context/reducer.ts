@@ -13,9 +13,10 @@ interface IAction {
 // todo reducer
 export const reducer = (state: ITodos, action: IAction) => {
     switch(action.type) {
-        case CREATE_TODO:
+        case CREATE_TODO: {
             return { todos: [...state.todos, action.payload] }     
-        case EDIT_TODO:
+        }
+        case EDIT_TODO: {
             const updatedTodo = action.payload;
             const todos = state.todos.map((todo, idx) => {
                 if (todo.id === updatedTodo.id) {
@@ -24,8 +25,13 @@ export const reducer = (state: ITodos, action: IAction) => {
                 return todo;
             })
             return { todos }
-        // case DELETE_TODO:
-
+        }
+        case DELETE_TODO: {
+            const todos = state.todos.filter(todo => {
+                return todo.id !== action.payload.id
+            })
+            return { todos }
+        }
         default:
             return state;
     }
