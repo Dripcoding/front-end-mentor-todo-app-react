@@ -1,18 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TodoContextProvider from './context/TodoContext'
-import App from './containers/App/App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import TodoContextProvider from "./context/TodoContext";
+import App from "./containers/App/App";
+import reportWebVitals from "./reportWebVitals";
 
-import './index.scss';
+import "./index.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-      <TodoContextProvider>
-         <App />
-      </TodoContextProvider>
+    <TodoContextProvider>
+      <App />
+    </TodoContextProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
