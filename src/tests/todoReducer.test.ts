@@ -1,11 +1,14 @@
 import {
-    todoReducer,
-    CREATE_TODO,
-    EDIT_TODO,
-    DELETE_TODO,
-    COMPLETE_TODO,
     ACTIVATE_TODO,
-    DELETE_ALL_TODOS, VIEW_ALL_COMPLETED_TODOS, VIEW_ALL_ACTIVE_TODOS
+    COMPLETE_TODO,
+    CREATE_TODO,
+    DELETE_ALL_TODOS,
+    DELETE_TODO,
+    EDIT_TODO,
+    todoReducer,
+    VIEW_ALL_ACTIVE_TODOS,
+    VIEW_ALL_COMPLETED_TODOS,
+    VIEW_ALL_TODOS
 } from '../context/reducer'
 
 describe("todo reducer" , () => {
@@ -127,4 +130,20 @@ describe("todo reducer" , () => {
         expect(result.todos.length).toBe(2)
         expect(result.todos).toEqual(expected)
     })
+
+    it("shows all todos", () => {
+        const action = {type: VIEW_ALL_TODOS, payload: {id: 1, text: "", active: false}}
+        const state = {
+            todos: [
+                {id: 1, text: "first todo", active: true},
+                {id: 2, text: "second todo", active: true},
+                {id: 3, text: "third todo", active: false}
+            ]
+        }
+        const result = todoReducer(state, action)
+
+        expect(result.todos).not.toBeNull()
+        expect(result.todos).toEqual(state.todos)
+    })
+
 })
