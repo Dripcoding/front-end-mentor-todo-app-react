@@ -5,7 +5,7 @@ import {
     DELETE_TODO,
     COMPLETE_TODO,
     ACTIVATE_TODO,
-    DELETE_ALL_TODOS
+    DELETE_ALL_TODOS, VIEW_ALL_COMPLETED_TODOS
 } from '../context/reducer'
 
 describe("todo reducer" , () => {
@@ -95,5 +95,21 @@ describe("todo reducer" , () => {
         expect(result.todos.length).toBe(0);
     })
 
-    it("")
+    it("shows all completed todos", () => {
+        const action = {type: VIEW_ALL_COMPLETED_TODOS, payload: {id: 1, text: "", active: false}}
+        const state = {
+            todos: [
+                {id: 1, text: "first todo", active: true},
+                {id: 2, text: "second todo", active: true},
+                {id: 3, text: "third todo", active: false}
+            ]
+        }
+        const expected = [{id: 3, text: "third todo", active: false}]
+        const result = todoReducer(state, action)
+
+        expect(result.todos).not.toBeNull();
+        expect(result.todos.length).toBe(1);
+        expect(result.todos).toEqual(expected)
+
+    })
 })
