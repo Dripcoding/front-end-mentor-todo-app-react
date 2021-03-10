@@ -62,13 +62,13 @@ export const todoReducer = (state: ITodos, action: IAction): ITodos => {
         }
         case VIEW_ALL_COMPLETED_TODOS: {
             const todos = state.todos.filter(todo => {
-                return todo.active === false
+                return !todo.active
             })
             return { todos }
         }
         case VIEW_ALL_ACTIVE_TODOS: {
             const todos = state.todos.filter(todo => {
-                return todo.active === true
+                return todo.active
             })
             return { todos }
         }
