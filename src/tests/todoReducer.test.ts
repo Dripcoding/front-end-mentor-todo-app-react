@@ -1,4 +1,12 @@
-import {todoReducer, CREATE_TODO, EDIT_TODO, DELETE_TODO, COMPLETE_TODO, ACTIVATE_TODO} from '../context/reducer'
+import {
+    todoReducer,
+    CREATE_TODO,
+    EDIT_TODO,
+    DELETE_TODO,
+    COMPLETE_TODO,
+    ACTIVATE_TODO,
+    DELETE_ALL_TODOS
+} from '../context/reducer'
 
 describe("todo reducer" , () => {
 
@@ -62,13 +70,28 @@ describe("todo reducer" , () => {
     })
 
     it("sets active state to true for an active todo", () => {
-        const action = { type: ACTIVATE_TODO, payload: { id: 1, text: "example todo" , active: false } }
+        const action = {type: ACTIVATE_TODO, payload: {id: 1, text: "example todo", active: false}}
         const state = {
-            todos: [{ id: 1, text: "first todo", active: true}]
+            todos: [{id: 1, text: "first todo", active: true}]
         }
         const result = todoReducer(state, action)
 
         expect(result.todos).not.toBeNull();
         expect(result.todos).toEqual(state.todos);
+    })
+
+    it("deletes all todos", () => {
+        const action = {type: DELETE_ALL_TODOS, payload: {id: 1, text: "", active: false}}
+        const state = {
+            todos: [
+                {id: 1, text: "first todo", active: true},
+                {id: 2, text: "second todo", active: true},
+                {id: 3, text: "third todo", active: false}
+            ]
+        }
+        const result = todoReducer(state, action);
+
+        expect(result.todos).not.toBeNull();
+        expect(result.todos.length).toBe(0);
     })
 })

@@ -15,7 +15,7 @@ export const VIEW_ALL_ACTIVE_TODOS: string = 'VIEW_ALL_ACTIVE_TODOS';
 
 interface IAction {
     type: string;
-    payload: ITodo 
+    payload: ITodo;
 }
 
 export const todoReducer = (state: ITodos, action: IAction): ITodos => {
