@@ -6,7 +6,7 @@ exports[`App matches snapshot 1`] = `
     class="appContainer__mainContainer background-desktop-dark"
   >
     <div
-      class="appContainer__titleContainer"
+      class="title__titleContainer"
     >
       <h1>
         Todo

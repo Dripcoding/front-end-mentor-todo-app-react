@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title matches snapshot 1`] = `
+<div>
+  <div
+    class="title__titleContainer"
+  >
+    <h1>
+      Todo
+    </h1>
+    <svg
+      data-testid="SUN-TOGGLE-ICON"
+    >
+      icon-sun.svg
+    </svg>
+  </div>
+</div>
+`;
