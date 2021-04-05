@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import TodoInput from "../components/TodoInput/index";
 
 describe("TodoInput", () => {
@@ -8,14 +9,29 @@ describe("TodoInput", () => {
   });
 
   it("renders correctly", () => {
-    const { getByTestId, getByRole } = render(<TodoInput />);
+    const { getByTestId, getByRole, getByPlaceholderText } = render(<TodoInput />);
 
-    const todoToggle = getByTestId("TODO_OVAL_TOGGLE");
+    const todoToggle = getByTestId("TODO_CHECKBOX_TOGGLE");
     expect(todoToggle).toBeInTheDocument();
     expect(todoToggle).toBeVisible();
 
     const todoInput = getByRole("textbox");
     expect(todoInput).toBeInTheDocument();
     expect(todoInput).toBeVisible();
+    expect(todoInput).toHaveValue("");
+
+    const todoInputPlaceholder = getByPlaceholderText("Create a new todo...");
+    expect(todoInputPlaceholder).toBeInTheDocument();
+    expect(todoInputPlaceholder).toBeVisible();
+  });
+
+  it("captures todo text correctly", () => {
+    const { getByRole } = render(<TodoInput />);
+
+    const sampleInput = "cook dinner";
+    const todoInput = getByRole("textbox");
+    userEvent.type(todoInput, sampleInput);
+
+    expect(todoInput).toHaveValue(sampleInput);
   });
 });

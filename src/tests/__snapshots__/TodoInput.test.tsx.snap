@@ -3,18 +3,20 @@
 exports[`TodoInput matches snapshot 1`] = `
 <div>
   <div
-    class="todoInput__todoInputContainer"
+    class="todoInput__container"
   >
     <div
-      class="todoInput__todoinput"
+      class="todoInput__input"
     >
       <div
-        class="todoOvalToggle__todoOvalToggleContainer"
-        data-testid="TODO_OVAL_TOGGLE"
+        class="todoCheckBoxToggle__container"
+        data-testid="TODO_CHECKBOX_TOGGLE"
       />
       <input
         class="todoInput__todoInput"
+        placeholder="Create a new todo..."
         type="text"
+        value=""
       />
     </div>
   </div>
