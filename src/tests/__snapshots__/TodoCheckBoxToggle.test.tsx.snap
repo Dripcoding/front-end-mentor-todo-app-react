@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoCheckBoxToggle matches snapshot 1`] = `
+<div>
+  <div
+    class="todoCheckBoxToggle__container"
+    data-testid="TODO_CHECKBOX_TOGGLE"
+  />
+</div>
+`;
