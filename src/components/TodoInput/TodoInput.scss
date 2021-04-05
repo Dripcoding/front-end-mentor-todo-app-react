@@ -1,0 +1,30 @@
+@import "../../mixins";
+@import "../../palette.scss";
+
+.todoInput__todoInputContainer {
+  @include flex(column, center, flex-start);
+  background-color: $very-dark-desaturated-blue;
+  height: 64px;
+  width: 540px;
+  padding: 20px 312px 20px 24px;
+  margin-top: 48px;
+
+  .todoOvalToggle__todoOvalToggleContainer {
+    border: 1px solid $very-dark-grayish-blue-one;
+    border-radius: 50%;
+    margin-right: 24px;
+    height: 24px;
+    width: 24px;
+  }
+
+  .todoInput__todoInput {
+    @include flex(row, flex-start, center);
+    height: 18px;
+
+    input {
+      @include text(#767992, 18px, normal, 400, -0.25px, 18px, left, none);
+      background-color: inherit;
+      border: none;
+    }
+  }
+}

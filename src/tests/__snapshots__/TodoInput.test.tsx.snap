@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoInput matches snapshot 1`] = `
+<div>
+  <div
+    class="todoInput__todoInputContainer"
+  >
+    <div
+      class="todoInput__todoinput"
+    >
+      <div
+        class="todoOvalToggle__todoOvalToggleContainer"
+        data-testid="TODO_OVAL_TOGGLE"
+      />
+      <input
+        class="todoInput__todoInput"
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
