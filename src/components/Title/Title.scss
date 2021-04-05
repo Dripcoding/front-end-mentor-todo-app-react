@@ -1,0 +1,18 @@
+@import "../../mixins";
+
+.title__titleContainer {
+  @include flex(row, space-between, flex-start);
+  width: 540px;
+  height: 64px;
+
+  h1 {
+    @include text(white, 40px, normal, 700, 15px, 40px, left, capitalize);
+    width: 167px;
+    height: 40px;
+  }
+
+  svg {
+    align-self: center;
+    margin-top: 20px;
+  }
+}
