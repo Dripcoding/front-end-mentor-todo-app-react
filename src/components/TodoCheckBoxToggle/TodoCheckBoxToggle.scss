@@ -1,0 +1,9 @@
+@import "../../palette.scss";
+
+.todoCheckBoxToggle__container {
+  border: 1px solid $very-dark-grayish-blue-one;
+  border-radius: 50%;
+  margin-right: 24px;
+  height: 24px;
+  width: 24px;
+}

@@ -1,21 +1,15 @@
 import React from "react";
 
+import TodoCheckBoxToggle from "../TodoCheckBoxToggle/index";
 import "./TodoInput.scss";
 
 const STYLE_BASE: string = "todoInput__";
 
-const TodoOvalToggle = (): JSX.Element => {
-  return (
-    <div className={"todoOvalToggle__todoOvalToggleContainer"} data-testid={"TODO_OVAL_TOGGLE"}>
-    </div>
-  );
-};
-
 const TodoInput = (): JSX.Element => {
   return (
-    <div className={`${STYLE_BASE}todoInputContainer`}>
-      <div className={`${STYLE_BASE}todoInput`}>
-        <TodoOvalToggle />
+    <div className={`${STYLE_BASE}container`}>
+      <div className={`${STYLE_BASE}input`}>
+        <TodoCheckBoxToggle />
         <input type="text" className={`${STYLE_BASE}todoInput`} placeholder={"Create a new todo..."} />
       </div>
     </div>

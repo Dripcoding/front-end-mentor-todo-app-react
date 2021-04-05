@@ -1,6 +1,6 @@
 @import "../../mixins";
 
-.title__titleContainer {
+.title__container {
   @include flex(row, space-between, flex-start);
   width: 540px;
   height: 64px;
