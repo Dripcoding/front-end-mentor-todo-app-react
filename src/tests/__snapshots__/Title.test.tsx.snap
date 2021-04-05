@@ -3,7 +3,7 @@
 exports[`Title matches snapshot 1`] = `
 <div>
   <div
-    class="title__titleContainer"
+    class="title__container"
   >
     <h1>
       Todo
