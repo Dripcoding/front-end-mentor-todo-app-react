@@ -7,10 +7,15 @@ const STYLE_BASE: string = "todoInput__";
 
 const TodoInput = (): JSX.Element => {
   const [text, setText] = useState<string>("");
+  // todo: connect to todo context
 
   const handleChange = (e: React.BaseSyntheticEvent): void => {
     setText(e.target.value);
   };
+
+  const createTodo = (e: React.BaseSyntheticEvent): void => {
+
+  }
 
   return (
     <div className={`${STYLE_BASE}container`}>
