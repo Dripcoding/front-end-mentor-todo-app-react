@@ -24,7 +24,7 @@ const initialState = {
   todos: [{ id: 1, text: "finish homework", active: true }]
 };
 
-const TodoContext: React.Context<ITodoContext> = React.createContext({
+export const TodoContext: React.Context<ITodoContext> = React.createContext({
   dispatch: (value: IAction) => {
   },
   state: initialState
