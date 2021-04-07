@@ -25,8 +25,7 @@ const initialState = {
 };
 
 export const TodoContext: React.Context<ITodoContext> = React.createContext({
-  dispatch: (value: IAction) => {
-  },
+  dispatch: (value: IAction) => {},
   state: initialState
 });
 
