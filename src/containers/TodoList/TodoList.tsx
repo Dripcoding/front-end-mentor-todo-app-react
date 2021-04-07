@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../../context/TodoContext";
+import TodoListItem from "../../components/TodoListItem";
 
 import "./todoList.scss";
 
@@ -12,7 +13,7 @@ const TodoList = (): JSX.Element => {
   return (
     <div className={`${STYLE_BASE}container`} data-testid={"TODO_LIST_CONTAINER"}>
       {todos.map(todo => (
-        <p>{todo.text}</p>
+        <TodoListItem todo={todo} />
       ))}
     </div>
   );

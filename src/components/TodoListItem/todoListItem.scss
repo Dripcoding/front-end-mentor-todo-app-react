@@ -1,16 +1,14 @@
 @import "../../mixins";
 @import "../../palette.scss";
 
-.todoInput__container {
+.todoListItem__container {
   @include flex(column, center, flex-start);
   background-color: $very-dark-desaturated-blue;
   height: 64px;
   width: 540px;
   padding: 20px 312px 20px 24px;
-  margin-top: 48px;
-  margin-bottom: 24px;
 
-  .todoInput__input {
+  .todoListItem__input {
     @include flex(row, flex-start, center);
     height: 18px;
 
