@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoInput matches snapshot 1`] = `
+<div>
+  <div
+    class="todoInput__container"
+  >
+    <div
+      class="todoInput__input"
+    >
+      <div
+        class="todoCheckBoxToggle__container"
+        data-testid="TODO_CHECKBOX_TOGGLE"
+      />
+      <input
+        class="todoInput__todoInput"
+        placeholder="Create a new todo..."
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

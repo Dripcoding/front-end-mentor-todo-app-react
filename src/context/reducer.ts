@@ -1,4 +1,4 @@
-import { ITodo, ITodos } from "./TodoContext";
+import { ITodo, ITodoState } from "./TodoContext";
 
 // todo action types
 export const CREATE_TODO: string = "CREATE_TODO";
@@ -12,12 +12,12 @@ export const VIEW_ALL_TODOS: string = "VIEW_ALL_TODOS";
 export const VIEW_ALL_COMPLETED_TODOS: string = "VIEW_ALL_COMPLETED_TODOS";
 export const VIEW_ALL_ACTIVE_TODOS: string = "VIEW_ALL_ACTIVE_TODOS";
 
-interface IAction {
+export interface IAction {
   type: string;
   payload: ITodo;
 }
 
-export const todoReducer = (state: ITodos, action: IAction): ITodos => {
+export const todoReducer = (state: ITodoState, action: IAction): ITodoState => {
   switch (action.type) {
     case CREATE_TODO: {
       return { todos: [...state.todos, action.payload] };

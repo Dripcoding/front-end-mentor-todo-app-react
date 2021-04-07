@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react";
 import Title from "../components/Title/index";
 
-
 describe("Title", () => {
   it("matches snapshot", () => {
     const { container } = render(<Title />);

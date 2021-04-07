@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { todoReducer } from "./reducer";
+import { IAction, todoReducer } from "./reducer";
 
 interface ITodoContextProps {
   children: React.ReactChild;
@@ -11,21 +11,31 @@ export interface ITodo {
   active: boolean;
 }
 
-export interface ITodos {
-  todos: ITodo[];
+export interface ITodoContext {
+  dispatch: React.Dispatch<IAction>;
+  state: ITodoState
 }
 
-const initialState: ITodos = {
-  todos: [{ id: 1, text: "finish homework", active: true }],
+export interface ITodoState {
+  todos: ITodo[]
+}
+
+const initialState = {
+  todos: [{ id: 1, text: "finish homework", active: true }]
 };
 
-const TodoContext: React.Context<ITodos> = React.createContext(initialState);
+export const TodoContext: React.Context<ITodoContext> = React.createContext({
+  dispatch: (value: IAction) => {},
+  state: initialState
+});
 
 const TodoContextProvider = ({ children }: ITodoContextProps): JSX.Element => {
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
+  const value: ITodoContext = { state, dispatch };
+
   return (
-    <TodoContext.Provider value={initialState}>{children}</TodoContext.Provider>
+    <TodoContext.Provider value={value}>{children}</TodoContext.Provider>
   );
 };
 
