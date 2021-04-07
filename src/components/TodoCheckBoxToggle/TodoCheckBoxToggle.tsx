@@ -2,9 +2,13 @@ import React from "react";
 
 import "./TodoCheckBoxToggle.scss";
 
+interface ITodoCheckBoxToggle {
+  disabled: boolean;
+}
+
 const STYLE_BASE: string = "todoCheckBoxToggle__";
 
-const TodoCheckBoxToggle = (): JSX.Element => {
+const TodoCheckBoxToggle = ({ disabled = true }: ITodoCheckBoxToggle): JSX.Element => {
   return (
     <div
       className={`${STYLE_BASE}container`}

@@ -24,7 +24,7 @@ const TodoInput = (): JSX.Element => {
   return (
     <div className={`${STYLE_BASE}container`}>
       <div className={`${STYLE_BASE}input`}>
-        <TodoCheckBoxToggle />
+        <TodoCheckBoxToggle disabled={true} />
         <input
           type="text"
           className={`${STYLE_BASE}todoInput`}
