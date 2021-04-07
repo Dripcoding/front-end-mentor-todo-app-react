@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoListItem matches snapshot 1`] = `
+<div>
+  <div
+    class="todoListItem__container"
+    data-testid="TODO_LIST_ITEM"
+  />
+</div>
+`;
