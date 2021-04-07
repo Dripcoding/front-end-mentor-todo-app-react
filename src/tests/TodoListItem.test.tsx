@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import TodoListItem from "../components/TodoListItem";
 import { ITodo } from "../context/TodoContext";
+import userEvent from "@testing-library/user-event";
 
 const todo: ITodo = {
   id: 10,
@@ -29,5 +30,15 @@ describe("TodoListItem", () => {
     expect(todoListItemInput).toBeInTheDocument();
     expect(todoListItemInput).toBeVisible();
     expect(todoListItemInput).toHaveValue("");
+  });
+
+  it("captures todo text correctly", () => {
+    const { getByRole } = render(<TodoListItem todo={todo} />);
+
+    const sampleInput = "finish homework";
+    const todoListItemInput = getByRole("textbox");
+    userEvent.type(todoListItemInput, sampleInput);
+
+    expect(todoListItemInput).toHaveValue(sampleInput);
   });
 });
