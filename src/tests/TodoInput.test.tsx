@@ -34,4 +34,14 @@ describe("TodoInput", () => {
 
     expect(todoInput).toHaveValue(sampleInput);
   });
+
+  it("resets when a todo is submitted", () => {
+    const { getByRole } = render(<TodoInput />);
+
+    const sampleInput = "finish homework";
+    const todoInput = getByRole("textbox");
+    userEvent.type(todoInput, sampleInput + "{enter}");
+
+    expect(todoInput).toHaveValue("");
+  });
 });
