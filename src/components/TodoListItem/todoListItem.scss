@@ -1,6 +1,8 @@
 @import "../../mixins";
 @import "../../palette.scss";
 
+// todo: apply text styles
+
 .todoListItem__container {
   @include flex(column, center, flex-start);
   background-color: $very-dark-desaturated-blue;

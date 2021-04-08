@@ -1,6 +1,8 @@
 import { render } from "@testing-library/react";
 import TodoList from "../containers/TodoList/index";
 
+// todo: write render test for todo items in TodoContext
+
 describe("TodoList", () => {
   it("should match snapshot", () => {
     const { container } = render(<TodoList />);

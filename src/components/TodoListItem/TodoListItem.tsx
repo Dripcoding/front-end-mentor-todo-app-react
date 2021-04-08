@@ -13,15 +13,15 @@ const STYLE_BASE: string = "todoListItem__";
 
 const TodoListItem = ({ todo }: ITodoListItemProps): JSX.Element => {
   const { dispatch } = useContext(TodoContext);
-  const [text, setText] = useState<string>("");
+  const [value, setValue] = useState<string>(todo.text);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setText(e.target.value);
+    setValue(e.target.value);
   };
 
   const editTodo = (e: React.KeyboardEvent): void => {
     if (e.key === "Enter") {
-      dispatch({ type: EDIT_TODO, payload: { id: 1, text: "abc", active: true } });
+      dispatch({ type: EDIT_TODO, payload: { id: 1, text: value, active: true } });
     }
   };
 
@@ -32,9 +32,10 @@ const TodoListItem = ({ todo }: ITodoListItemProps): JSX.Element => {
         <input
           type="text"
           className={`${STYLE_BASE}input`}
+          data-testid={"TODO_LIST_ITEM"}
           onChange={handleChange}
           onKeyDown={editTodo}
-          value={text}
+          value={value}
         />
       </div>
     </div>

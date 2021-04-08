@@ -8,6 +8,9 @@ interface ITodoCheckBoxToggle {
 
 const STYLE_BASE: string = "todoCheckBoxToggle__";
 
+// todo: implement toggling ability
+// todo: connect and update todo state in TodoContext
+
 const TodoCheckBoxToggle = ({ disabled = true }: ITodoCheckBoxToggle): JSX.Element => {
   return (
     <div
