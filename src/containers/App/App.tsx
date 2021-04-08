@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../../components/Title/index";
 import TodoInput from "../../components/TodoInput/index";
+import TodoList from "../TodoList/index";
 
 import "./App.scss";
 
@@ -11,6 +12,7 @@ const App = (): JSX.Element => {
     <main className={`${STYLE_BASE}mainContainer background-desktop-dark`}>
       <Title />
       <TodoInput />
+      <TodoList />
     </main>
   );
 };

@@ -29,10 +29,35 @@ exports[`App matches snapshot 1`] = `
         />
         <input
           class="todoInput__todoInput"
+          data-testid="TODO_INPUT"
           placeholder="Create a new todo..."
           type="text"
           value=""
         />
+      </div>
+    </div>
+    <div
+      class="todoList__container"
+      data-testid="TODO_LIST_CONTAINER"
+    >
+      <div
+        class="todoListItem__container"
+        data-testid="TODO_LIST_ITEM_CONTAINER"
+      >
+        <div
+          class="todoListItem__input"
+        >
+          <div
+            class="todoCheckBoxToggle__container"
+            data-testid="TODO_CHECKBOX_TOGGLE"
+          />
+          <input
+            class="todoListItem__input"
+            data-testid="TODO_LIST_ITEM"
+            type="text"
+            value="finish homework"
+          />
+        </div>
       </div>
     </div>
   </main>

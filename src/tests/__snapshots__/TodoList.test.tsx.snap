@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList should match snapshot 1`] = `
+<div>
+  <div
+    class="todoList__container"
+    data-testid="TODO_LIST_CONTAINER"
+  >
+    <div
+      class="todoListItem__container"
+      data-testid="TODO_LIST_ITEM_CONTAINER"
+    >
+      <div
+        class="todoListItem__input"
+      >
+        <div
+          class="todoCheckBoxToggle__container"
+          data-testid="TODO_CHECKBOX_TOGGLE"
+        />
+        <input
+          class="todoListItem__input"
+          data-testid="TODO_LIST_ITEM"
+          type="text"
+          value="finish homework"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

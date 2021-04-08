@@ -9,29 +9,31 @@ const STYLE_BASE: string = "todoInput__";
 
 const TodoInput = (): JSX.Element => {
   const { dispatch } = useContext(TodoContext);
-  const [text, setText] = useState<string>("");
+  const [value, setValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setText(e.target.value);
+    setValue(e.target.value);
   };
 
   const createTodo = (e: React.KeyboardEvent): void => {
     if (e.key === "Enter") {
-      dispatch({ type: CREATE_TODO, payload: { id: 1, text: "abc", active: true } });
+      dispatch({ type: CREATE_TODO, payload: { id: 1, text: value, active: true } });
+      setValue("");
     }
   };
 
   return (
     <div className={`${STYLE_BASE}container`}>
       <div className={`${STYLE_BASE}input`}>
-        <TodoCheckBoxToggle />
+        <TodoCheckBoxToggle disabled={true} />
         <input
           type="text"
           className={`${STYLE_BASE}todoInput`}
+          data-testid={"TODO_INPUT"}
           onChange={handleChange}
           onKeyDown={createTodo}
           placeholder={"Create a new todo..."}
-          value={text}
+          value={value}
         />
       </div>
     </div>
