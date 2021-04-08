@@ -41,4 +41,18 @@ describe("TodoListItem", () => {
 
     expect(todoListItemInput).toHaveValue(sampleInput);
   });
+
+  it("edits todo text correctly", () => {
+    const { getByDisplayValue } = render(<TodoListItem todo={todo} />);
+
+    const sampleInput = "edited todo";
+    const todoListItemInput = getByDisplayValue(todo.text);
+
+    expect(todoListItemInput).toBeInTheDocument();
+
+    userEvent.clear(todoListItemInput);
+    userEvent.type(todoListItemInput, sampleInput + "{enter}");
+
+    expect(todoListItemInput).toHaveValue(sampleInput);
+  });
 });
