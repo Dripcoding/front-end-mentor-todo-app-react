@@ -29,7 +29,7 @@ describe("TodoListItem", () => {
     const todoListItemInput = getByRole("textbox");
     expect(todoListItemInput).toBeInTheDocument();
     expect(todoListItemInput).toBeVisible();
-    expect(todoListItemInput).toHaveValue("");
+    expect(todoListItemInput).toHaveValue("example");
   });
 
   it("captures todo text correctly", () => {
@@ -37,6 +37,7 @@ describe("TodoListItem", () => {
 
     const sampleInput = "finish homework";
     const todoListItemInput = getByRole("textbox");
+    userEvent.clear(todoListItemInput);
     userEvent.type(todoListItemInput, sampleInput);
 
     expect(todoListItemInput).toHaveValue(sampleInput);

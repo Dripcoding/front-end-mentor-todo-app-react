@@ -26,7 +26,7 @@ const TodoListItem = ({ todo }: ITodoListItemProps): JSX.Element => {
   };
 
   return (
-    <div className={`${STYLE_BASE}container`} data-testid={"TODO_LIST_ITEM"}>
+    <div className={`${STYLE_BASE}container`} data-testid={"TODO_LIST_ITEM_CONTAINER"}>
       <div className={`${STYLE_BASE}input`}>
         <TodoCheckBoxToggle disabled={false} />
         <input

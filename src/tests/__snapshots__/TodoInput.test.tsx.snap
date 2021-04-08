@@ -14,6 +14,7 @@ exports[`TodoInput matches snapshot 1`] = `
       />
       <input
         class="todoInput__todoInput"
+        data-testid="TODO_INPUT"
         placeholder="Create a new todo..."
         type="text"
         value=""
