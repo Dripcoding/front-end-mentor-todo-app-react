@@ -12,7 +12,7 @@
 
   .todoInput__input {
     @include flex(row, flex-start, center);
-    height: 18px;
+    height: 24px;
 
     input {
       @include text(#767992, 18px, normal, 400, -0.25px, 18px, left, none);

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import { ITodo, TodoContext } from "../../context/TodoContext";
+import { EDIT_TODO } from "../../context/reducer";
+import TodoCheckBoxToggle from "../TodoCheckBoxToggle";
 
 import "./todoListItem.scss";
-import TodoCheckBoxToggle from "../TodoCheckBoxToggle";
-import { EDIT_TODO } from "../../context/reducer";
 
 interface ITodoListItemProps {
   todo: ITodo;

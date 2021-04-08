@@ -1,8 +1,6 @@
 @import "../../mixins";
 @import "../../palette.scss";
 
-// todo: apply text styles
-
 .todoListItem__container {
   @include flex(column, center, flex-start);
   background-color: $very-dark-desaturated-blue;
@@ -12,10 +10,11 @@
 
   .todoListItem__input {
     @include flex(row, flex-start, center);
-    height: 18px;
+    height: 24px;
+    width: 492px;
 
     input {
-      @include text(#767992, 18px, normal, 400, -0.25px, 18px, left, none);
+      @include text($light-input-color, 18px, normal, 400, -0.25px, 18px, left, none);
       background-color: inherit;
       border: none;
     }
